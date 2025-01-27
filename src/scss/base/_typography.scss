@@ -1,0 +1,82 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+
+body {
+  font-family: font.$family-primary;
+  font-size: font.$font-size-18;
+  color: colour.$text-body;
+  font-weight: medium;
+  line-height: 1.6;
+}
+
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.5px;
+  color: colour.$text-h-tag;
+
+}
+
+
+
+
+
+
+em {
+  font-style: normal;            
+}
+
+h1 {
+
+  font-size: font.$size-h1;
+  line-height: 1;
+  color: black;
+  font-weight: 700;
+
+}
+
+
+
+
+h2 { 
+  font-size: font.$size-h2;
+  font-weight: 800;
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 1;
+  padding-bottom: spacing.$spaceing-size-160;
+
+}
+
+.about {
+  h2 {
+    padding-bottom: spacing.$spaceing-size-24;
+
+  }
+}
+
+
+
+h3 {
+  font-size: font.$size-h3;
+  font-weight: 600;
+  
+ 
+}
+
+
+
+
+
+
+@include breakpoint.media("tablet-850px") {
+  h2 {
+    padding-bottom: spacing.$spaceing-size-72;
+
+  }
+  
+}
+

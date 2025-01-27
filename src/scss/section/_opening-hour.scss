@@ -1,0 +1,71 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+
+
+/* ============================================ */
+/*            || OPENINGS HOURS                 */
+/* ============================================ */
+.openinghours {
+
+  overflow: hidden;
+  display: inline-block;
+}
+.openinghourscontent {
+  float:left;
+}
+
+th, td {
+  font-size: clamp(0.9rem, 4vw, 1.125rem);
+}
+
+.opening-hours-table {
+  border-collapse:collapse;
+}
+
+.opening-hours-table tr td:first-child {
+  font-weight:bold;
+}
+
+
+.opening-hours-table tr td {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 400;
+  color: #333;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+.opening-hours-table tr:last-child td {
+  border-bottom: none; /* Remove the bottom border from the last row */
+}
+
+.opening-hours-table .day {
+  padding-right: 7rem;
+}
+
+
+.opening-hours-table .divider {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+
+@media (max-width: 30em) {
+  
+  .opening-hours-table .day {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 21.88em) {
+  
+ 
+  .opening-hours-table {
+    font-size: 1rem;
+  }
+}

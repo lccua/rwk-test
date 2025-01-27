@@ -1,0 +1,42 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+
+.banner {
+  background-color: #343434;
+  height: 67px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-inline: 70px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  &__info {
+    color : white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    
+  }
+
+  &__social {
+    color : white;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    font-size: 27px;
+    cursor: pointer;
+
+  }
+}

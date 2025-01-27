@@ -1,0 +1,101 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+section {
+  padding: 10rem 0;
+
+  &:nth-of-type(even) {
+    background-color: white;
+  }
+
+  &:nth-of-type(odd) {
+    background-color: white;
+  }
+}
+
+footer {
+  background-color: white;
+  padding: 4rem 0;
+}
+
+em {
+  font-weight: 700;
+  color: #333
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.main-container {
+  width: min(90%, 1600px);
+  margin-inline: auto;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$spaceing-size-32 !important;
+  text-align: center;
+}
+
+
+.social-container {
+  color : white;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  font-size: 27px;
+}
+
+.social-container a {
+  text-decoration: none;
+}
+ 
+
+.section-divider {
+  border-top: 1px solid #c0c0c08c;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+
+
+
+
+
+
+
+@include breakpoint.media("tablet-850px") {
+  section {
+    padding: spacing.$spaceing-size-72 0; 
+  }
+
+ 
+ 
+}
+

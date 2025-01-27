@@ -1,0 +1,66 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+.shop {
+    background-color: #fafafa !important;
+
+    .main-container--shop {
+        text-align: center;
+        h2 {
+            color: #000;
+        }
+       
+
+        .shop__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 10rem;
+
+            @media (max-width: 1150px) {
+                grid-template-columns: 1fr;
+                row-gap: 5rem;
+            }
+        }
+
+
+        .shop__product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .shop__image {
+            width: clamp(300px, 50vw, 500px);
+  
+            /* Height maintains aspect ratio */
+            height: auto;
+            
+            /* Optional: max-width to prevent overflow */
+            max-width: 100%;
+            
+            /* Optional: smooth scaling */
+            object-fit: contain;
+        }
+
+        .shop__title {
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+        }
+
+        .button {
+            padding: 0.5rem 4rem;
+            border: none;
+            background: #000;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}

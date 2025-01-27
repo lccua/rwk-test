@@ -1,0 +1,85 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+.contact {
+  &__content {
+
+    display: flex;
+    flex-direction: row;
+    gap: spacing.$spaceing-size-96;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: spacing.$spaceing-size-16;
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: spacing.$spaceing-size-12;
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    justify-content: center;
+  }
+
+
+  }
+  
+
+
+
+.main-container--contact {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$spaceing-size-96;
+}
+
+@include breakpoint.media("tablet-850px") {
+ 
+
+  .main-container--contact p {
+    margin-bottom: spacing.$spaceing-size-72;
+  }
+  
+}
+
+@include breakpoint.media("tablet-960px") {
+  .contact{
+    &__content {
+  
+      flex-direction: column;
+    }
+
+  }
+
+  .main-container--contact {
+    max-width: 600px;
+  }
+
+  
+
+  .or {
+    
+    flex-direction: row;
+  }
+.or:after,
+.or:before {
+  height: 1px;
+  width: 100%;
+
+}
+
+
+}
