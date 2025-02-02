@@ -1,0 +1,86 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+// Variables
+$primary-color: black;
+$button-bg: black;
+
+.hero {
+  display: flex;
+  background-color: #fff;
+  height: calc(100vh - 180px);
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    height: auto;
+    padding: spacing.$spaceing-size-48 0; 
+
+  }
+
+
+
+  .main-container {
+    &--hero {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+
+      @media (max-width: 1100px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__image {
+     /* Width clamps between 200px and 800px, with 50% of viewport width as preferred */
+  width: clamp(600px, 50vw, 60%);
+  
+  /* Height maintains aspect ratio */
+  height: auto;
+  
+  /* Optional: max-width to prevent overflow */
+  max-width: 100%;
+  
+  /* Optional: smooth scaling */
+  object-fit: contain;
+  
+    
+   
+  }
+
+  &__content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+
+    @media (max-width: 1100px) {
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      line-height: 0.95;  /* Adjust spacing between lines */
+      br {
+        display: block;
+      }
+    }
+
+    .button {
+      font-size: 1.5rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($button-bg, 20%);
+      }
+    }
+  }
+}

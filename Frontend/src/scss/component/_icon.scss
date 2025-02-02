@@ -1,0 +1,20 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+
+$icon-base: 2rem;
+$icon-size: $icon-base;
+$icon-circle-width: calc(#{$icon-base} * 2);
+$icon-circle-height: calc(#{$icon-base} * 2);
+
+
+.social-icon {
+  color: white;
+}
+
+.social-icon--footer {
+  color: black;
+}

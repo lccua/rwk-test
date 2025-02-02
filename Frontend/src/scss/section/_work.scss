@@ -1,0 +1,83 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+.work {
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    padding-bottom: spacing.$spaceing-size-112;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$spaceing-size-160;
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: spacing.$spaceing-size-96;
+    align-items: center;
+  }
+  
+  &__row:nth-of-type(odd) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  
+  
+
+  &__image {
+    width: 100%; /* Prevent image from growing too large */
+
+    max-width: 750px; /* Prevent image from growing too large */
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$spaceing-size-24;
+    flex: 1 1 380px; /* Ensure the content takes up enough space */
+  }
+}
+
+@include breakpoint.media("laptop-1100px") {
+  .work {
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: spacing.$spaceing-size-128;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: spacing.$spaceing-size-48;
+    }
+    
+    // For even rows, reverse the content and image order
+    &__row:nth-of-type(even) {
+      flex-direction: column-reverse;
+    }
+    
+    &__content {
+      flex: none;
+    }
+
+    &__image {
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      flex-direction: column;
+      text-align: start;
+    }
+  }
+}
+
+
+
+

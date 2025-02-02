@@ -1,0 +1,60 @@
+@use '../variable/colour';
+@use '../variable/font';
+@use '../variable/spacing';
+@use '../variable/breakpoint';
+@use '../variable/border';
+
+.main-container--brand {
+  display: flex;
+  flex-direction: column;
+  gap: spacing.$spaceing-size-96;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.brand__logo {
+  overflow: hidden;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.brand__logo:before,
+.brand__logo:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.brand__logo:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.brand__logo:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+
+
+.brand__slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.brand__slide img {
+  height: 120px;
+  margin: 0 40px;
+}
+

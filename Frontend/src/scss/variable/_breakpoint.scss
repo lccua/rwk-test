@@ -1,0 +1,28 @@
+$breakpoints: (
+  "desktop-1536px": 96em,     // 1536px
+  "desktop-1440px": 90em,     // 1440px
+  "laptop-1366px": 85.375em,  // 1366px
+  "laptop-1280px": 80em,      // 1280px
+  "laptop-1200px": 75em,      // 1200px
+  "laptop-1100px": 68.75em,   // 1100px
+  "tablet-1024px": 64em,      // 1024px
+  "tablet-960px": 60em,       // 960px
+  "tablet-850px": 53.125em,   // 850px 
+  "tablet-768px": 48em,       // 768px
+  "tablet-700px": 43.75em,    // 700px 
+  "tablet-640px": 40em,       // 640px
+  "tablet-580px": 36.25em,    // 580px 
+  "mobile-480px": 30em,       // 480px
+  "mobile-400px": 25em,       // 400px 
+  "mobile-350px": 21.88em,    // 350px
+  "mobile-320px": 20em        // 320px
+);
+
+
+@mixin media($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+
